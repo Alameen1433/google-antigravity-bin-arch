@@ -1,9 +1,9 @@
-name: Create GitHub Release on master
+name: Create GitHub Release on main
 
 on:
   push:
     branches:
-      - master
+      - main
 
 permissions:
   contents: write
@@ -59,7 +59,7 @@ jobs:
           target_commitish: ${{ github.sha }}
           generate_release_notes: true
           body: |
-            Automated release created after merge/push to master.
+            Automated release created after merge/push to main.
             Package version: `${{ steps.version.outputs.version }}`.
 
       - name: Release already exists
